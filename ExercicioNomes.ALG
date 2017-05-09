@@ -6,18 +6,20 @@ Algoritmo "semnome"
 // Data atual  : 08/05/2017
 Var
 // Seção de Declarações das variáveis 
-
-
+nome: caracter
+nome_invert: caracter
+i: inteiro
 
 Inicio
-leia(s)
-escolha s
-        caso 1
-             escreval("domingo")
-        caso 2
-             escreval("terça")
+nome_invert <- "";
+escreval("Digite seu nome")
+leia(nome)
+para i de 0 ate compr(nome)-1 faca
+     nome_invert <- nome_invert + copia(nome,(compr(nome)-i),1)
+fimpara
 
-// Seção de Comandos, procedimento, funções, operadores, etc... 
+escreval(nome_invert)
+
 
 
 Fimalgoritmo
