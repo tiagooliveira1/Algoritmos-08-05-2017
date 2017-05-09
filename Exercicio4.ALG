@@ -7,7 +7,7 @@ Algoritmo "semnome"
 Var
 // Seção de Declarações das variáveis 
 nome: caracter
-ultimo_nome: caracter
+nome_meio: caracter
 i: inteiro
 AchouEspaco: inteiro
 ContaEspacos: inteiro
@@ -18,20 +18,25 @@ leia(nome)
 
 AchouEspaco <- 0
 ContaEspacos <-0
-i <- compr(nome)
-ultimo_nome <- "";
+i <- 0
+nome_meio <- "";
 
 
 enquanto AchouEspaco = 0 faca
-         se copia(nome,i,1) <> " " entao
-            ultimo_nome <- copia(nome,i,1)+ultimo_nome
-         senao
-             AchouEspaco <- 1
+         se copia(nome,i,1) = " " entao
+            ContaEspacos <- ContaEspacos+1
          fimse
-         i <- i-1
+
+         se (copia(nome,i,1) <> " ") e (ContaEspacos=1) entao
+            nome_meio <- nome_meio+copia(nome,i,1)
+         fimse
+         i <- i+1
+         se i = compr(nome) entao
+            AchouEspaco <- 1
+         fimse
             
 fimenquanto
-escreval(ultimo_nome)
+escreval(nome_meio)
 
 
 
